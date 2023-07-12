@@ -1,0 +1,163 @@
+
+
+# Challenge_02-CubosAcademy-iFOOD
+Projeto Challenge_02-CubosAcademy-iFOOD - 07-2023
+
+Problema - Preza ou Predador?
+
+Ferramentas:
+
+onecompiler.com - Acesso a página online para edição e testes do código (necessário criar conta gratuita)
+Linguagem - JavaScript iniciante
+Desenvoltura - Lógica de Programação
+GitHub - para divulgação do seu código
+
+Objetivo: Resolução do código para verificarmos se um animal é predador ou preza, de acordo com as variáveis informadas.
+
+Desenvolvido por - Marcia Moreira 
+Desafio oferecido por - Programa iFOOD e Cubos Academy
+* Obs.: Alguns trexos foram omitidos para não comprometer o ensino de outros alunos na plataforma.
+
+SP, 12-07-2023 - MM
+
+
+
+// Problema_04: Luta por diferença de peso
+
+// Problema
+// Você foi contratado pelo UFC, maior evento de artes maciais mistas (MMA) do mundo, para desenvolver um programa que os ajude a saber se uma luta entre dois lutadores pode ou não acontecer.
+
+// A única restrição para que uma luta aconteça é que os lutadores tenham uma diferença máxima de peso de 5 kg.
+
+// Entrada
+// A entrada do seu programa será composta por uma variável chamada pesos, do tipo array de number, que armazena, respectivamente, o peso do Lutador A e do Lutador B, ambos em quilogramas, sendo esses os lutadores analisados.
+
+// Saída
+// Você deverá retornar:
+
+// PODEM LUTAR: caso a diferença entre os pesos dos lutadores seja no máximo de 5 kg;
+// NAO PODEM LUTAR: caso a diferença entre os pesos dos lutadores seja maior que 5 kg.
+// Exemplo
+// Entrada
+// pesos = [50, 53]
+
+// Saída
+// PODEM LUTAR
+
+// Explicação
+// O Lutador A pesa 50 kg e o Lutador B pesa 53 kg. Como a diferença entre os pesos é de 3 kg, eles podem lutar.
+
+// Veja os três principais erros que você pode está cometendo ao passar seu código para a nossa plataforma:
+// Você está esquecendo de trocar o console.log pelo return;
+// Você não está retornando o que é pedido. Lembre-se que a mensagem a ser retornada tem que ser exatamente a solicitada no exercício, sem espaços em branco a mais e com as letras maiúsculas. Se a questão estiver pedindo, por exemplo, para retornar um número, não retorne nenhuma mensagem antes, retorne APENAS o número;
+// Você está atribuindo valores às variáveis de entrada.
+// Para maiores informações, veja a PARTE PRÁTICA DO MINICURSO.
+
+// CASO VOCÊ TENHA DELETADO A FUNÇÃO "solucao", COLE O CÓDIGO ABAIXO:
+
+// function solucao(pesos) {
+
+//       // seu codigo aqui
+
+// }
+
+//----------------------------------------------------------------------------------
+//01 - LÓGICA-PASSO A PASSO NO PAPEL - O QUE PRECISAMOS FAZER?
+
+//Uma luta pode ou não acontecer
+//Restrição - Diferença Máxima de peso de 5kg entre os lutadores
+
+//Entrada:
+//variavel ARRAY de number
+//let pesos = [71, 74]
+
+//Saída:
+// Retornar:
+// PODEM LUTAR !== <= 5kg
+// NAO PODEM LUTAR  !== > 5kg
+
+//Lutador A
+//Lutador B
+
+// Precisamos verificar os pesos na ARRAY
+// Como verificamos os valores nas arrays?
+// Como comparamos os valores nas arrays?
+// Se PesoLutadorA 
+// Se PesoLutadorB 
+
+//-----------------------------------------------------------------------------------
+// 02 - NO JAVA SCRIPT - TRADUÇÃO:
+// CÓDIGO - // VIA EXPLICADA / DETALHADA:
+
+let pesos = [71, 74] // Dif -3Pode - Negativo (Valores sugeridos no exercício)
+//OKlet pesos = [71, 74] // Dif 3Pode - Positivo
+
+//OKlet pesos = [71, 70] // Dif 1Pode - Positivo
+//OKlet pesos = [71, 72] // Dif -1Pode - Negativo ERRO
+
+//OKlet pesos = [71, 66] // Dif 5Pode - Positivo
+//OKlet pesos = [71, 76] // Dif -5Pode - Negativo
+
+//OKlet pesos = [71, 65] // Dif 6NaoPode - Positivo erro
+//OKlet pesos = [71, 77] // Dif -6NaoPode - Negativo erro
+
+console.log("Peso Lutador A:", pesos[0])
+console.log("Peso Lutador B:", pesos[1])
+
+let diferencaPeso = pesos[0] - pesos[1]
+console.log("Diferença de Peso do Lutador A para Lutador B:", diferencaPeso)
+
+if (diferencaPeso > 0 && diferencaPeso <= 5) {
+  console.log("Dif Menor ou Igual a 5: ","PODEM LUTAR")
+} else if (diferencaPeso <= -1 && diferencaPeso >= -5 ) {
+  console.log("Dif Menor ou Igual a -5: ","PODEM LUTAR")
+} else {
+  console.log("Dif Maior que 5 ou -5:", "NAO PODEM LUTAR")
+}
+
+
+//////////////////////////////////////////////////////////
+//03 - VIA RESUMIDA:
+/*
+
+let pesos = [71, 74] // Dif -3Pode - Negativo (Valores sugeridos no exercício)
+
+//console.log("Peso Lutador A:", pesos[0])
+//console.log("Peso Lutador B:", pesos[1])
+
+let diferencaPeso = pesos[0] - pesos[1]
+//console.log("Diferença de Peso do Lutador A para Lutador B:", diferencaPeso)
+
+if (diferencaPeso > 0 && diferencaPeso <= 5) {
+  console.log("Dif Menor ou Igual a 5: ","PODEM LUTAR")
+} else if (diferencaPeso <= -1 && diferencaPeso >= -5 ) {
+  console.log("Dif Menor ou Igual a -5: ","PODEM LUTAR")
+} else {
+  console.log("Dif Maior que 5 ou -5:", "NAO PODEM LUTAR")
+}
+*/
+
+/////////////////////////////////////////////////////////
+//04 - VIA PARA PLATAFORMA: 100% Acerto - OK 23/06/2023 17:24h
+
+/*
+//function solucao(pesos) {
+
+  //let pesos = [71, 74] 
+  
+  let diferencaPeso = pesos[0] - pesos[1]
+  
+  if (diferencaPeso > 0 && diferencaPeso <= 5) {
+    return "PODEM LUTAR"
+  } else if (diferencaPeso <= -1 && diferencaPeso >= -5 ) {
+    return "PODEM LUTAR"
+  } else {
+    return "NAO PODEM LUTAR"
+  }
+  
+//}
+*/
+
+
+//////////////////////////////////////////////////////////
+
